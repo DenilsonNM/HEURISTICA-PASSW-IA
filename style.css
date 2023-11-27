@@ -19,7 +19,7 @@ body {
 /* -------------------- CODIGO DE LOGIN ---------------------- */
 .form {
   border-radius: 10px;
-  box-shadow: 0px 8px 16px 0px rgba(1,1,1,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(1, 1, 1, 0.2);
   background-color: #fafafa;
   max-width: 400px;
   padding: 40px;
@@ -32,6 +32,7 @@ body {
 }
 
 input[type="text"],
+input[type="number"],
 input[type="password"] {
   background: none;
   border: 2px solid #e5e5e5;
@@ -42,19 +43,20 @@ input[type="password"] {
 }
 
 input[type="text"]::placeholder,
+input[type="number"],
 input[type="password"]::placeholder {
   color: #727272;
 }
 
 input[type="text"]:focus,
+input[type="number"]:focus,
 input[type="password"]:focus {
   outline: 2px solid #00f;
 }
 
-
 .generar {
-  color: rgba(1,1,1,0.5);
-  transition: .3s ease-in-out;
+  color: rgba(1, 1, 1, 0.5);
+  transition: 0.3s ease-in-out;
 }
 
 .generar:hover {
@@ -78,11 +80,32 @@ input[type="password"]:focus {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   box-shadow: 0px 8px 16px 0px rgba(74, 74, 194, 0.4);
 }
 
 #login:hover {
+  background-color: #00f;
+}
+
+#btngen {
+  background-color: rgb(74, 74, 194);
+  color: #fafafa;
+  outline: none;
+  border: 0;
+  height: 40px;
+  padding: 0 20px;
+  margin-top: 40px;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 8px 16px 0px rgba(74, 74, 194, 0.4);
+}
+
+#btngen:hover {
   background-color: #00f;
 }
 
@@ -94,7 +117,7 @@ input[type="password"]:focus {
 
 .form-generar {
   border-radius: 10px;
-  box-shadow: 0px 8px 16px 0px rgba(1,1,1,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(1, 1, 1, 0.2);
   background-color: #fafafa;
   max-width: 600px;
   padding: 40px;
@@ -106,4 +129,13 @@ input[type="password"]:focus {
   top: 0;
   left: 100%;
   transform: translate(-100%);
+}
+
+.areaclave{
+  /* border: 1px red solid; */
+  text-align: center;
+  background-color: #88d669;
+  color: white;
+  font-weight: bold;
+  /* padding: 10px; */
 }

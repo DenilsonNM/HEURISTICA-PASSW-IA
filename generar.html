@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generar Contraseña</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <div class="form-generar">
-      <a href="index.html" id="close"><img src="img/close.svg" ></a>
-      <h1 class="title">Generar contraseña</h1>
-      <label class="label">Nombre de mejor amigo(a)</label>
-      <input type="text" name="" id="">
-      <label class="label">Nombre de primera mascota</label>
-      <input type="text" name="" id="">
-      <label class="label">Escuela donde estudiaste</label>
-      <input type="text" name="" id="">
-      <label class="label">Comida favorita</label>
-      <input type="text" name="" id="">
-      <label class="label">Color favorito</label>
-      <input type="text" name="" id="">
-      <label class="label">Año de nacimiento</label>
-      <input type="text" name="" id="">
-      <label class="label">Edad</label>
-      <input type="text" name="" id="">
-      <button id="login">Generar Contraseña</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generar Contraseña</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-generar">
+        <a href="index.html" id="close"><img src="img/close.svg" /></a>
+        <h1 class="title">Generador de contraseñas</h1>
+
+        <label class="label">Nombre o apodo</label>
+        <input type="text" id="text1" />
+        <label class="label">Nombre de tu mascota</label>
+        <input type="text" id="text2" />
+        <label class="label">Escuela donde estudiaste</label>
+        <input type="text" id="text3" />
+        <label class="label">Comida favorita</label>
+        <input type="text" id="text4" />
+        <label class="label">Color favorito</label>
+        <input type="text" id="text5" />
+        <label class="label">Año de nacimiento</label>
+        <input type="text" id="text6" />
+        <label class="label">Edad</label>
+        <input type="text" id="text7" />
+        <!-- config -->
+        <label class="label">Longutud de contraseña</label>
+        <input type="number" id="longcon" />
+        <label class="label" for="checkbox">Incluir símbolos</label>
+        <input type="checkbox" id="checkbox1" />
+        <button id="btngen">Generar Contraseña</button>
+        <br><br>
+        <div class="areaclave">
+          <span id="clavegen"></span>
+        </div>
+      </div>
     </div>
-  </div>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
