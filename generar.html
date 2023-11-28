@@ -8,37 +8,50 @@
   </head>
   <body>
     <div class="container">
-      <div class="form-generar">
-        <a href="index.html" id="close"><img src="img/close.svg" /></a>
-        <h1 class="title">Generador de contraseñas</h1>
+      <form action="NewPassword.html" method="get">
+        <div class="form-generar">
+          <a href="index.html" id="close"><img src="img/close.svg" /></a>
+          <h1 class="title">Formulario 🧐</h1>
 
-        <label class="label">Nombre o apodo</label>
-        <input type="text" id="text1" />
-        <label class="label">Nombre de tu mascota</label>
-        <input type="text" id="text2" />
-        <label class="label">Escuela donde estudiaste</label>
-        <input type="text" id="text3" />
-        <label class="label">Comida favorita</label>
-        <input type="text" id="text4" />
-        <label class="label">Color favorito</label>
-        <input type="text" id="text5" />
-        <label class="label">Año de nacimiento</label>
-        <input type="number" id="text6" />
-        <label class="label">Edad</label>
-        <input type="number" id="text7" />
-        <!-- config -->
-        <label class="label" for="longcon">Longutud de contraseña</label>
-        <input type="number" id="longcon" />
-        <label class="label" for="checkbox1">Incluir símbolos</label>
-        <input type="checkbox" id="checkbox1" />
-        <button id="btngen">Generar Contraseña</button>
-        <br><br>
-        <hr>
-        <div class="areaclave">
-          <span id="clavegen"></span>
+          <label class="label">Nombre o apodo:</label>
+          <input type="text" id="Res1" required />
+          <label class="label">Nombre de tu mascota:</label>
+          <input type="text" id="Res2" required />
+          <label class="label">Escuela donde estudiaste:</label>
+          <input type="text" id="Res3" required />
+          <label class="label">Comida favorita:</label>
+          <input type="text" id="Res4" required />
+          <label class="label">Color favorito:</label>
+          <input type="text" id="Res5" required />
+          <label class="label">Año de nacimiento:</label>
+          <input type="number" id="Res6" required />
+          <label class="label">Edad:</label>
+          <input type="number" id="Res7" required />
+          <!-- config -->
+          <label class="label" for="TamCon">Longutud de contraseña (min 8):</label>
+          <input type="number" id="TamCon" required />
+          <label class="label" for="checkbox1">Incluir símbolos: <input type="checkbox" id="checkbox1" /></label>
+          <button id="btngen" type="submit">Generar Contraseña</button>
+          <br /><br /><br />
+          <div class="areaclave">
+            <textarea id="CadRes" readonly></textarea>
+            <button onclick="copiarTexto()" id="btngen">Copiar</button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
     <script src="main.js"></script>
+    <script>
+      function copiarTexto() {
+        var textarea = document.getElementById("CadRes");
+
+        textarea.select();
+        textarea.setSelectionRange(0, 99999);
+
+        document.execCommand("copy");
+
+        alert("Texto copiado: " + textarea.value);
+      }
+    </script>
   </body>
 </html>

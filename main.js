@@ -7,35 +7,54 @@ const genclave = (base, length) => {
   return password;
 };
 
-const generate = () => {
-  let length = parseInt(document.getElementById("longcon").value);
+const generate = (event) => {
+  event.preventDefault();
 
-  if (isNaN(length) || length <= 0) {
-    alert("Ingrese una longitud de contraseña válida.");
-    return;
+  let length = parseInt(document.getElementById("TamCon").value);
+
+  if (length < 8) {
+    alert("La contraseña debe tener al menos 8 caracteres.");
+    return false;
   }
+
+  // if (isNaN(length) || length <= 0) {
+  //   alert("Ingrese una longitud de contraseña válida.");
+  //   return;
+  // }
 
   let base = "";
 
-  base += document.getElementById("text1").value;
-  base += document.getElementById("text2").value;
-  base += document.getElementById("text3").value;
-  base += document.getElementById("text4").value;
-  base += document.getElementById("text5").value;
-  base += document.getElementById("text6").value;
-  base += document.getElementById("text7").value;
+  base += document.getElementById("Res1").value;
+  base += document.getElementById("Res2").value;
+  base += document.getElementById("Res3").value;
+  base += document.getElementById("Res4").value;
+  base += document.getElementById("Res5").value;
+  base += document.getElementById("Res6").value;
+  base += document.getElementById("Res7").value;
 
-  const simbol = "?@&%$#.+-_";
+  const simbol = "!@#$%^&*.?_+-";
 
   if (document.getElementById("checkbox1").checked) {
     base += simbol;
   }
 
-  document.getElementById("clavegen").innerText = genclave(base, length);
+  document.getElementById("CadRes").innerText = genclave(base, length);
+
+  //para main2
+
+  // const generatedPassword = genclave(base, length);
+
+  // localStorage.setItem("generatedPassword", generatedPassword);
+
+  // document.getElementById("CadRes").innerText = generatedPassword;
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("btngen").addEventListener("click", () => {
-    generate();
-  });
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", generate);
+
+  // document.getElementById("btngen").addEventListener("click", () => {
+  //   generate();
+  // });
 });
