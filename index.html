@@ -7,16 +7,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="form">
-        <h1 class="title">Iniciar Sesión</h1>
-        <input type="text" name="" id="" placeholder="Usuario" />
-        <input type="password" name="" id="" placeholder="Contraseña" />
-        <a href="generar.html" class="generar"
-          >¿Desea generar una contraseña?</a
-        >
-        <button id="login">Iniciar Sesión</button>
+    <form action="welcome.html" method="get" onsubmit="return validateForm()">
+      <div class="container">
+        <div class="form">
+          <h1 class="title">Iniciar Sesión</h1>
+          <input type="text" name="" id="" placeholder="Usuario" required />
+          <input
+            type="password"
+            name="contr"
+            id="contr"
+            placeholder="Contraseña"
+            required
+          />
+          <a href="generar.html" class="generar"
+            >¿Desea generar una contraseña?</a
+          >
+          <button type="submit" id="login">Iniciar Sesión</button>
+        </div>
       </div>
-    </div>
+    </form>
+    <script src="validar.js"></script>
   </body>
 </html>
