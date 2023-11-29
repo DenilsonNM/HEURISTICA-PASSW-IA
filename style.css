@@ -140,6 +140,7 @@ input[type="password"]:focus {
   resize: none;
   padding: 10px;
   text-align: center;
+  background: none;
 }
 
 #checkbox1 {
