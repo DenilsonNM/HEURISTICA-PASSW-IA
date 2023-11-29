@@ -8,34 +8,54 @@
   </head>
   <body>
     <div class="container">
-      <form action="NewPassword.html" method="get">
+      <form action="#" method="get">
         <div class="form-generar">
           <a href="index.html" id="close"><img src="img/close.svg" /></a>
-          <h1 class="title">Formulario 🧐</h1>
+          <h1 class="title">Formulario 📝</h1>
 
-          <label class="label">Nombre o apodo:</label>
-          <input type="text" id="Res1" required />
-          <label class="label">Nombre de tu mascota:</label>
-          <input type="text" id="Res2" required />
-          <label class="label">Escuela donde estudiaste:</label>
-          <input type="text" id="Res3" required />
-          <label class="label">Comida favorita:</label>
-          <input type="text" id="Res4" required />
-          <label class="label">Color favorito:</label>
-          <input type="text" id="Res5" required />
-          <label class="label">Año de nacimiento:</label>
-          <input type="number" id="Res6" required />
-          <label class="label">Edad:</label>
-          <input type="number" id="Res7" required />
+          <input type="text" id="Res1" required placeholder="Nombre o apodo:" />
+          <input
+            type="text"
+            id="Res2"
+            required
+            placeholder="Nombre de tu mascota:"
+          />
+          <input
+            type="text"
+            id="Res3"
+            required
+            placeholder="Escuela donde estudiaste:"
+          />
+          <input
+            type="text"
+            id="Res4"
+            required
+            placeholder="Comida favorita:"
+          />
+          <input type="text" id="Res5" required placeholder="Color favorito:" />
+          <input
+            type="number"
+            id="Res6"
+            required
+            placeholder="Año de nacimiento:"
+          />
+          <input type="number" id="Res7" required placeholder="Edad" />
           <!-- config -->
-          <label class="label" for="TamCon">Longutud de contraseña (min 8):</label>
-          <input type="number" id="TamCon" required />
-          <label class="label" for="checkbox1">Incluir símbolos: <input type="checkbox" id="checkbox1" /></label>
-          <button id="btngen" type="submit">Generar Contraseña</button>
-          <br /><br /><br />
+          <input
+            type="number"
+            id="TamCon"
+            required
+            placeholder="Longutud (min 8):"
+          />
+          <label class="label" for="checkbox1"
+            >Incluir símbolos: <input type="checkbox" id="checkbox1"
+          /></label>
+          <button id="btngen" type="submit">Generar Contraseña 🔒</button>
+          <input type="reset" value="Limpiar 🔁" class="reset">
+          <br /><br />
           <div class="areaclave">
             <textarea id="CadRes" readonly></textarea>
-            <button onclick="copiarTexto()" id="btngen">Copiar</button>
+            <button onclick="copiarTexto()" id="btngen">Copiar 📋</button>
           </div>
         </div>
       </form>

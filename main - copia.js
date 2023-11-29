@@ -1,3 +1,12 @@
+//  const genclave = (base, length) => {
+//    let password = "";
+//    for (let x = 0; x < length; x++) {
+//      let random = Math.floor(Math.random() * base.length);
+//      password += base.charAt(random);
+//    }
+//    return password;
+//  };
+
 const genclave = (base, length) => {
   if (length > base.length) {
     alert(
@@ -6,12 +15,14 @@ const genclave = (base, length) => {
     return "";
   }
 
-  let password = "";
-  for (let x = 0; x < length; x++) {
+  const uniqueChars = new Set();
+
+  while (uniqueChars.size <= length) {
     let random = Math.floor(Math.random() * base.length);
-    password += base.charAt(random);
+    uniqueChars.add(base.charAt(random));
   }
-  return password;
+
+  return Array.from(uniqueChars).join("");
 };
 
 const generate = (event) => {
@@ -24,6 +35,11 @@ const generate = (event) => {
     return false;
   }
 
+  // if (isNaN(length) || length <= 0) {
+  //   alert("Ingrese una longitud de contraseña válida.");
+  //   return;
+  // }
+
   let base = "";
 
   base += document.getElementById("Res1").value;
@@ -34,22 +50,6 @@ const generate = (event) => {
   base += document.getElementById("Res6").value;
   base += document.getElementById("Res7").value;
 
-  let res1,
-    res2,
-    res3,
-    res4,
-    res5,
-    res6,
-    res7 = "";
-
-  res1 += document.getElementById("Res1").value.slice(0, 3);
-  res2 += document.getElementById("Res2").value.slice(0, 3);
-  res3 += document.getElementById("Res3").value.slice(0, 3);
-  res4 += document.getElementById("Res4").value.slice(0, 3);
-  res5 += document.getElementById("Res5").value.slice(0, 3);
-  res6 += document.getElementById("Res6").value.slice(0, 4);
-  res7 += document.getElementById("Res7").value.slice(0, 2);
-
   const simbol = "!@#$%^&*.?_+-";
 
   if (document.getElementById("checkbox1").checked) {
@@ -57,10 +57,22 @@ const generate = (event) => {
   }
 
   document.getElementById("CadRes").innerText = genclave(base, length);
+
+  //para main2
+
+  // const generatedPassword = genclave(base, length);
+
+  // localStorage.setItem("generatedPassword", generatedPassword);
+
+  // document.getElementById("CadRes").innerText = generatedPassword;
 };
 
 window.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
 
   form.addEventListener("submit", generate);
+
+  // document.getElementById("btngen").addEventListener("click", () => {
+  //   generate();
+  // });
 });
