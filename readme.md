@@ -1,5 +1,7 @@
 # Generador de contraseñas
 
+[Preview](https://denilsonnm.github.io/HEURISTICA-PASSW-IA/index.html)
+
 ## Problema
 Actualmente existen miles de sitios de Internet que mantienen perfiles creados por usuarios, al momento de crear una cuenta, se vuelve tedioso pensar en una contraseña que cumpla con las características de seguridad recomendadas.
 ## Heurística
